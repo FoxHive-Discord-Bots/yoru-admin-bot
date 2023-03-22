@@ -10,7 +10,7 @@ const colors = {
     "reset": "\u001b[0;1m"
 };
 
-const color = ({ fun, comt, text, imp, title, para, link, border }) => {
+const colorLog = ({ fun, comt, text, imp, title, para, link, border }) => {
     let txt = "";
     if (imp) txt += colors.red + imp + colors.reset;
     if (title) txt += colors.yellow + title + colors.reset;
@@ -23,4 +23,4 @@ const color = ({ fun, comt, text, imp, title, para, link, border }) => {
     console.log(txt);
 }
 
-module.exports = color;
+module.exports = colorLog;

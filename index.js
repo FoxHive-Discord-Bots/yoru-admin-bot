@@ -1,5 +1,4 @@
-
-const color = require('./color.js');
+console.colorLog = require('./color.js');
 const {
     yoruToken: TOKEN,
     yoruID: clientID,
@@ -18,24 +17,24 @@ const client = new Client({
     ]
 });
 console.clear();
-color({border:"---------------------"});
-color({ imp: '\nTOKEN : ' + TOKEN + '\nguildID : ' + guildID + '\nclientID : ' + clientID + '\nadminID : ' + adminID + '\nmongodbURI : ' + databaseURL });
+console.colorLog({border:"---------------------"});
+console.colorLog({ imp: '\nTOKEN : ' + TOKEN + '\nguildID : ' + guildID + '\nclientID : ' + clientID + '\nadminID : ' + adminID + '\nmongodbURI : ' + databaseURL });
 // -----------------------------------------------------------------------------
 function showError(error) {
-    color({ para: `\n${error.name} : ${ error.message }` });
-    color({ para: `File: ${__filename}` });
-    color({ para: `Line: ${error.stack.split('\n')[1].split(':')[1]}\n` });
-    // color({ para: error.stack });
+    console.colorLog({ para: `\n${error.name} : ${ error.message }` });
+    console.colorLog({ para: `File: ${__filename}` });
+    console.colorLog({ para: `Line: ${error.stack.split('\n')[1].split(':')[1]}\n` });
+    // console.colorLog({ para: error.stack });
 }
 client.once(Events.ClientReady, () => {
-    color({ title : "Event : ", text: "ClientReady"});
-    color({ title:'Name : ', text: `${client.user.tag}` });
-    color({ title:'Status : ', text: `online` });
-    color({ comt: 'Wating for Event ...(/)' });
+    console.colorLog({ title : "Event : ", text: "ClientReady"});
+    console.colorLog({ title:'Name : ', text: `${client.user.tag}` });
+    console.colorLog({ title:'Status : ', text: `online` });
+    console.colorLog({ comt: 'Wating for Event ...(/)' });
 });
 
 client.on(Events.MessageCreate, (msg) => {
-    color({ title : "Event : ", text: "MessageCreate"});
+    console.colorLog({ title : "Event : ", text: "MessageCreate"});
     if (msg.author.id === clientID) return;
     try {
         if (msg.channelId === '1085522038116065281') {
@@ -51,9 +50,9 @@ client.on(Events.MessageCreate, (msg) => {
 })
 
 client.on(Events.Error, (err) => {
-    color({imp: "Error event is trigured"})
+    console.colorLog({imp: "Error event is trigured"})
     showError(err);
 })
 // -----------------------------------------------------------------------------
 client.login(TOKEN);
-color({ border: "---------------------" });
+console.colorLog({ border: "---------------------" });
