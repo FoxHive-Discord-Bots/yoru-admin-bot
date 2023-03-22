@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/FoxHive-Discord-Bots/yoru-admin-bot#readme",
   "devDependencies": {
+    "@discordjs/rest": "^1.6.0",
     "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }

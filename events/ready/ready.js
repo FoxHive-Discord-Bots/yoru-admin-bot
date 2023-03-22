@@ -1,8 +1,10 @@
+const { Events } = require("discord.js");
 module.exports = {
-    name: 'ready',
+    name: Events.ClientReady,
     once: true,
     execute(client) {
-        console.log(`Name :${client.user.tag} \nStatus: online`);
-        console.log('Wating for Event ...(/)')
+        console.colorLog({ title: "Event : ", text: "ClientReady" });
+        console.colorLog({ title: 'Name : ', text: `${client.user.tag}` });
+        console.colorLog({ title: 'Status : ', text: `online` });
     },
 };
