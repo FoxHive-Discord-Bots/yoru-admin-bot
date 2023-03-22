@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bot": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/FoxHive-Discord-Bots/yoru-admin-bot/issues"
   },
-  "homepage": "https://github.com/FoxHive-Discord-Bots/yoru-admin-bot#readme"
+  "homepage": "https://github.com/FoxHive-Discord-Bots/yoru-admin-bot#readme",
+  "devDependencies": {
+    "discord.js": "^14.8.0",
+    "nodemon": "^2.0.21"
+  }
 }
