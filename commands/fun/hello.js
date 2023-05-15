@@ -5,6 +5,6 @@ module.exports = {
         .setName("hello")
         .setDescription("Replies with olleh !"),
     async execute(command) {
-        await command.reply("olleh !");
+        await command.reply("how can i help u !");
     },
 };
